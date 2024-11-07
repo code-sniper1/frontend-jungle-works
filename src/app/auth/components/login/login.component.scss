@@ -1,0 +1,56 @@
+
+// input::placeholder{
+//     font-size: small;
+//     padding-left: 10%;
+// }
+
+.img-fluid {
+    width: 400px;
+    height: 350px;
+}
+
+.closeBtn {
+    border: none;
+    background-color: white;
+    position: absolute;
+    right: 2%;
+    top: 2%;
+}
+
+.flex-row {
+    position: relative;
+    border: 1px solid skyblue;
+    border-radius: 10px;
+    width: 350px;
+    padding: 3%;
+}
+
+.icon-span {
+    position: absolute;
+    left: 3%;
+}
+
+input {
+    margin-left: 10%;
+    width: 280px;
+    border: none;
+    box-shadow: none !important;
+}
+
+input:active{
+    border-color: transparent;
+}
+
+.input-field {
+    margin-bottom: 35px;
+    position: relative;
+}
+
+.errMsg {
+    position: absolute;
+    top:100%;
+}
+
+.btn {
+    width: 300px;
+}

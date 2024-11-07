@@ -1,0 +1,106 @@
+.gradient-custom {
+  background: linear-gradient(
+    to right bottom,
+    rgb(246, 101, 101),
+    rgb(56, 37, 37)
+  );
+}
+
+.container {
+  padding-top: 100px;
+}
+
+.g-0 {
+  height: 500px;
+}
+
+.img-fluid {
+  border-radius: 5%;
+}
+
+.editBtn {
+  border: none;
+  background-color: white;
+  position: absolute;
+  right: 2%;
+  top: 2%;
+
+}
+
+.picMsg {
+  position: absolute;
+  width: 250px;
+  top: 1%;
+  left: 8%;
+  text-align: left;
+}
+
+.errMsg {
+  position: absolute;
+  top: 40%;
+  left: 7%;
+}
+
+.btn-dark {
+  position: absolute;
+  right: 5%;
+  bottom: 10%;
+}
+
+.resetLink{
+  position: absolute;
+  left: 35%;
+  bottom: 10%;
+}
+
+.resetLink:hover{
+  color: red;
+}
+
+.nameInput {
+  width: 200px;
+  display: inline-block;
+  background-color: transparent;
+  color: white;
+  border-color: black;
+  box-shadow: white;
+}
+
+.nameInput:disabled {
+  width: 400px;
+  text-align: center;
+  display: inline-block;
+  color: white;
+  font-size: 1.5rem;
+}
+
+input:disabled {
+  background-color: transparent;
+  border-color: transparent;
+  color: rgb(105, 102, 102);
+  font-weight: 500;
+}
+
+:host ::ng-deep .iti__country {
+  width: 250px ;
+}
+
+:host ::ng-deep .iti * {
+  border: none;
+}
+
+:host ::ng-deep .iti *:focus-visible{
+  outline:none !important;
+}
+
+.nav{
+  width: 100%;
+  justify-content: center;
+}
+
+.logo{
+  width:6em;
+  height:2em;
+  cursor: pointer;
+}
+

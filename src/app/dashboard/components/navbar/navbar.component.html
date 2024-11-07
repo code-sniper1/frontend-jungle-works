@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
+  <div class="container-fluid">
+    <!-- <a class="navbar-brand fs-2" href="/dashboard">Jungleworks</a> -->
+    <div class="hover" (click)="dashboard()">
+      <img class="logo" src="../../../assets/images/amazon logo.webp">
+  </div>
+      <ul class="navbar-nav ms-auto">
+    <!-- <li class="nav-item">
+      <button class="nav-link mx-2 fs-5" aria-current="page" (click)="dashboard()">
+        Dashboard
+      </button>
+    </li> -->
+  </ul>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item" *ngIf="adminRoutes">
+          <span class="nav-link mx-2" style="color: white !important"
+            >User Count: {{ userCount }}</span
+          >
+        </li>
+        <li class="nav-item"  *ngIf="adminRoutes">
+          <button
+            class="nav-link mx-2"
+            aria-current="page"
+            (click)="getUsers()"
+          >
+            View Users
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link mx-2" aria-current="page" (click)="profile()">
+            Profile
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link mx-2" aria-current="page" (click)="logout()">
+            Logout
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,169 @@
+<div class="container h-100">
+  <div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="col-lg-12 col-xl-11">
+      <div class="card-body p-md-5">
+        <div class="row justify-content-center">
+          <div class="col-md-10 order-2 order-lg-1">
+            <p class="h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Edit User</p>
+
+            <button class="closeBtn" (click)="closePopup()">
+              <i class="fas fa-xmark fa-lg fa-fw"></i>
+            </button>
+
+            <form
+              [formGroup]="editForm"
+              (ngSubmit)="submitForm()"
+              class="mx-1 mx-md-4"
+            >
+              <div class="imageDiv">
+                <div class="newPic">Click on Picture to upload new one</div>
+                <!-- <label for="userImg">
+                  <img
+                    src="{{ imageUrl }}"
+                    alt="Avatar"
+                    class="img-fluid my-5"
+                    style="width: 250px"
+                  />
+                </label> -->
+
+                 <label for="userImg">
+                  <img
+                    src="https://atg-prod-scalar.s3.amazonaws.com/studentpower/media/user%20avatar.png"
+                    alt="Avatar"
+                    class="img-fluid my-5"
+                    style="width: 250px"
+                  />
+                </label>
+                
+                <input
+                  type="file"
+                  id="userImg"
+                  accept=".jpg,.jpeg,.png"
+                  (change)="onFileSelected($event)"
+                  class="form-control"
+                  formControlName="userImg"
+                  hidden
+                />
+                <div
+                  *ngIf="
+                      editForm.errors?.['sizeExceeded']
+                      "
+                  class="text-danger errMsg3"
+                >
+                  Size of image cannot exceed 2 mb!
+                </div>
+              </div>
+
+              <div class="input-field">
+                <div class="d-flex flex-row align-items-center mb-4">
+                  <i class="fas fa-user fa-lg me-3 fa-fw icon-span"></i>
+                  <div class="form-outline flex-fill mb-0">
+                    <input
+                      type="text"
+                      id="name"
+                      class="form-control"
+                      formControlName="name"
+                      placeholder="Name"
+                    />
+                    <app-error-message
+                      class="text-danger errMsg2"
+                      [control]="{
+                        type: 'name',
+                        error: editForm.get('name')?.errors || 'false'
+                      }"
+                    ></app-error-message>
+                    <div
+                      *ngIf="editForm.hasError('LengthError')"
+                      class="text-danger errMsg"
+                    >
+                      Name between 3-20 characters!
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="input-field">
+                <div class="d-flex flex-row align-items-center mb-4">
+                  <i class="fa-solid fa-phone"></i>
+                  <div class="form-outline flex-fill mb-0">
+                    <ngx-intl-tel-input
+                      [cssClass]="'custom'"
+                      [enablePlaceholder]="true"
+                      [searchCountryFlag]="true"
+                      [preferredCountries]="[
+                        CountryISO.UnitedStates,
+                        CountryISO.UnitedKingdom
+                      ]"
+                      [selectedCountryISO]="CountryISO.India"
+                      [maxLength]="20"
+                      [phoneValidation]="true"
+                      name="phone"
+                      class="form-control"
+                      formControlName="phone"
+                    ></ngx-intl-tel-input>
+                    <div
+                      *ngIf="editForm.hasError('phLength')"
+                      class="text-danger errMsg"
+                    >
+                      Check your mobile number as per country code!
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="input-field">
+                <div class="d-flex flex-row align-items-center mb-4">
+                  <i class="fas fa-envelope fa-lg me-3 fa-fw icon-span"></i>
+                  <div class="form-outline flex-fill mb-0">
+                    <input
+                      type="email"
+                      id="email"
+                      class="form-control"
+                      formControlName="email"
+                      placeholder="Email"
+                    />
+                    <app-error-message
+                      class="text-danger errMsg"
+                      [control]="{
+                        type: 'email',
+                        error: editForm.get('email')?.errors || 'false'
+                      }"
+                    ></app-error-message>
+                  </div>
+                </div>
+              </div>
+
+              <div class="input-field">
+                <div class="d-flex flex-row align-items-center mb-4">
+                  <i class="fas fa-location fa-lg me-3 fa-fw icon-span"></i>
+                  <div class="form-outline flex-fill mb-0">
+                    <input
+                      type="text"
+                      id="address"
+                      class="form-control"
+                      formControlName="address"
+                      placeholder="Address"
+                    />
+                    <app-error-message
+                      class="text-danger errMsg"
+                      [control]="{
+                        type: 'address',
+                        error: editForm.get('address')?.errors || 'false'
+                      }"
+                    ></app-error-message>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex mx-5 mb-3 mb-lg-4">
+                <button type="submit" class="btn btn-primary btn-lg">
+                  Save Changes
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

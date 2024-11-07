@@ -1,0 +1,163 @@
+<!-- <app-navbar></app-navbar> -->
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="hover" >
+    <img class="logo" src="../../../assets/images/amazon logo.webp">
+</div>
+  <div class="nav">
+    <li style="font-size: 31px;" class="navbar-brand">Profile</li>
+  </div>
+</nav> -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="hover">
+    <img (click)="dashboard()" class="logo" src="../../../assets/images/amazon logo.webp">
+  </div>
+  <div class="nav">
+    <li style="font-size: 31px;" class="navbar-brand">Users</li>
+  </div>
+  <!-- <div class="logout">
+    <button (click)="logout()" style="background-color:black;     font-size: 13px;" class="navbar-brand">Logout</button>
+
+  </div> -->
+</nav>
+
+<div class="datePicker">
+  <mat-form-field>
+    <mat-label>MM/DD/YYYY</mat-label>
+    <input
+      matInput
+      [matDatepicker]="picker"
+      (dateInput)="onDateChange($event)"
+    />
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+</div>
+
+<div class="full">
+  <table class="table table-dark table-striped-columns text-center">
+    <thead>
+      <tr>
+        <th scope="col">
+          <div class="sortName">
+            User_Id
+            <a type="button" class="sortUp btn-default" [ngClass]="[btnStyleid]" (click)="sortDataAsc('id')">▲</a>
+            <a type="button" class="sortDown btn-default" [ngClass]="[btnStyle2id]" (click)="sortDataDesc('id')">▼</a>
+          </div>
+        </th>
+        <th scope="col">
+          <div class="sortName">
+            Name
+            <a type="button" class="sortUp btn-default" [ngClass]="[btnStylename]" (click)="sortDataAsc('name')">▲</a>
+            <a type="button" class="sortDown btn-default" [ngClass]="[btnStyle2name]" (click)="sortDataDesc('name')">▼</a>
+          </div>
+        </th>
+        <th scope="col">Phone</th>
+        <th scope="col">Email</th>
+        <th scope="col">Address</th>
+        <th scope="col">
+          <div class="sortName">
+            Registration Date
+            <a type="button" class="sortUp btn-default" [ngClass]="[btnStylereg_date]" (click)="sortDataAsc('reg_date')"
+              >▲</a
+            >
+            <a type="button" class="sortDown btn-default" [ngClass]="[btnStyle2reg_date]" (click)="sortDataDesc('reg_date')"
+              >▼</a
+            >
+          </div>
+        </th>
+        <th scope="col">Image</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of viewUsers">
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.phone }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.address }}</td>
+        <td>{{ user.reg_date | date : "dd/MM/yyyy" }}</td>
+        <td>
+          <img
+            src="{{ user.image }}"
+            style="width: 80px; height: 45px"
+            alt="Avatar"
+          />
+        </td>
+        <td>
+          <button
+            type="button"
+            class="editBtn"
+            (click)="editUserPopup(user.ref_token)"
+          >
+            <i class="far fa-edit mb-5"></i>
+          </button>
+        </td>
+        <td>
+          <button
+            type="button"
+            class="editBtn"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            <i class="far fa-trash-can mb-5"></i>
+          </button>
+
+          <div
+            class="modal fade"
+            id="exampleModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    User Deletion Confirmation!
+                  </h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    data-bs-dismiss="modal"
+                  >
+                    Cancel Deletion
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-success"
+                    data-bs-dismiss="modal"
+                    (click)="deleteUser(user.ref_token)"
+                  >
+                    Confirm Deletion
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="paginator">
+  <p-paginator
+    (onPageChange)="onPageChange($event)"
+    [first]="first"
+    [rows]="rows"
+    [totalRecords]="totalRecords"
+    [rowsPerPageOptions]="[5, 10, 15]"
+  ></p-paginator>
+</div>
+
+

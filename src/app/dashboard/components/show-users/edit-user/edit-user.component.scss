@@ -1,0 +1,88 @@
+section {
+  padding: 55px 0;
+}
+
+.closeBtn {
+  border: none;
+  background-color: white;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+}
+
+.flex-row {
+  position: relative;
+  border: 1px solid skyblue;
+  border-radius: 10px;
+  width: 400px;
+  padding: 3%;
+}
+
+.imageDiv{
+  position: absolute;
+  right: 10%;
+  top: 20%;
+}
+
+.input-field {
+  margin-bottom: 35px;
+  position: relative;
+}
+
+.icon-span {
+  position: absolute;
+  left: 3%;
+}
+
+.img-fluid {
+  border-radius: 5%;
+}
+
+input {
+  margin-left: 10%;
+  width: 280px;
+  border: none;
+  box-shadow: none !important;
+}
+
+input:active {
+  border: none;
+}
+
+.errMsg {
+  position: absolute;
+  top: 100%;
+}
+
+.errMsg2 {
+  position: absolute;
+  top: 100%;
+  left: 60%;
+}
+
+.errMsg3 {
+  position: absolute;
+  top: 80%;
+}
+
+.newPic{
+  position: absolute;
+  top: 90%;
+  left:5%;
+}
+
+ngx-intl-tel-input {
+  border: none;
+}
+
+:host ::ng-deep .iti__country {
+  width: 250px;
+}
+
+:host ::ng-deep .iti * {
+  border: none;
+}
+
+:host ::ng-deep .iti *:focus-visible{
+  outline:none !important;
+}

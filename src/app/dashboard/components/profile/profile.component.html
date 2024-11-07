@@ -1,0 +1,165 @@
+<!-- <app-navbar></app-navbar> -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="hover">
+    <img (click)="dashboard()" class="logo" src="../../../assets/images/amazon logo.webp">
+  </div>
+  <div class="nav">
+    <li style="font-size: 31px;" class="navbar-brand">Profile</li>
+  </div>
+  <!-- <div class="logout">
+    <button (click)="logout()" style="background-color:black;     font-size: 13px;" class="navbar-brand">Logout</button>
+
+  </div> -->
+</nav>
+<section class="vh-100" style="background-color: #f4f5f7">
+  <form
+    #f="ngForm"
+    [formGroup]="profileForm"
+    (ngSubmit)="saveProfile()"
+    class="mx-1 mx-md-4"
+  >
+    <div class="container h-100">
+      <div class="card" style="border-radius: 0.5rem">
+        <div class="row g-0">
+          <div
+            class="col-md-4 gradient-custom text-center text-white"
+            style="
+              border-top-left-radius: 0.5rem;
+              border-bottom-left-radius: 0.5rem;
+            "
+          >
+            <div class="text-light picMsg" *ngIf="editOn">
+              Click on Picture to upload new one
+            </div>
+            <input
+              type="file"
+              id="userImg"
+              class="form-control"
+              formControlName="userImg"
+              accept=".jpg,.jpeg,.png"
+              (change)="onFileSelected($event)"
+              hidden
+            />
+            <div
+              *ngIf="profileForm.errors?.['sizeExceeded']"
+              class="text-light errMsg"
+            >
+              Size of image cannot exceed 2 mb
+            </div>
+            <label for="userImg">
+              <!-- <img
+                src="{{ imageUrl }}"
+                alt="Avatar"
+                class="img-fluid my-5"
+                style="width: 250px"
+              />
+            </label>
+            <input
+              type="text"
+              id="name"
+              class="form-control nameInput"
+              formControlName="name"
+            /> -->
+                 <img
+                src="https://atg-prod-scalar.s3.amazonaws.com/studentpower/media/user%20avatar.png"
+                alt="Avatar"
+                class="img-fluid my-5"
+                style="width: 250px"
+              />
+            </label>
+            <input
+              type="text"
+              id="name"
+              class="form-control nameInput"
+              formControlName="name"
+            />
+            <app-error-message
+              class="text-light"
+              [control]="{
+                type: 'name',
+                error: profileForm.get('name')?.errors || 'false'
+              }"
+            ></app-error-message>
+            <div *ngIf="profileForm.hasError('LengthError')" class="text-light">
+              Name must be between 3 to 20 characters
+            </div>
+            <button type="button" class="editBtn" (click)="editProfile()">
+              <i class="far fa-edit mb-5"></i>
+            </button>
+          </div>
+          <div class="col-md-8">
+            <div class="card-body p-4">
+              <h2>Information</h2>
+              <hr class="mt-0 mb-4" />
+              <div class="row pt-1">
+                <div class="col-6 mb-3">
+                  <h4>Email:</h4>
+                  <input
+                    type="email"
+                    id="email"
+                    class="form-control"
+                    formControlName="email"
+                  />
+                  <app-error-message
+                    class="text-danger"
+                    [control]="{
+                      type: 'email',
+                      error: profileForm.get('email')?.errors || 'false'
+                    }"
+                  ></app-error-message>
+                </div>
+                <div class="col-6 mb-3">
+                  <h4>Phone:</h4>
+                  <ngx-intl-tel-input
+                    [cssClass]="'custom'"
+                    [enablePlaceholder]="true"
+                    [searchCountryFlag]="true"
+                    [preferredCountries]="[
+                      CountryISO.UnitedStates,
+                      CountryISO.UnitedKingdom
+                    ]"
+                    [selectedCountryISO]="CountryISO.India"
+                    [maxLength]="20"
+                    [phoneValidation]="true"
+                    name="phone"
+                    class="form-control"
+                    formControlName="phone"
+                  ></ngx-intl-tel-input>
+
+                  <div
+                    *ngIf="profileForm.errors?.['phLength']"
+                    class="text-danger"
+                  >
+                    Check number of digits as per country code.
+                  </div>
+                </div>
+              </div>
+              <div class="row pt-1">
+                <h4>Address:</h4>
+                <input
+                  type="text"
+                  id="address"
+                  class="form-control"
+                  formControlName="address"
+                />
+                <app-error-message
+                  class="text-danger"
+                  [control]="{
+                    type: 'address',
+                    error: profileForm.get('address')?.errors || 'false'
+                  }"
+                ></app-error-message>
+              </div>
+            </div>
+            <a type="button" class="resetLink" (click)="resetPassword()"
+              >Reset Password</a
+            >
+            <button type="submit" class="btn btn-dark" *ngIf="editOn">
+              Edit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</section>

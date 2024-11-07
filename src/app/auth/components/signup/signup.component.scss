@@ -1,0 +1,91 @@
+
+section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.closeBtn {
+  border: none;
+  background-color: white;
+  position: absolute;
+  right: 2%;
+  top: 2%;
+}
+
+.flex-row {
+  position: relative;
+  border: 1px solid skyblue;
+  border-radius: 10px;
+  width: 400px;
+  padding: 3%;
+}
+
+input {
+  margin-left: 10%;
+  width: 280px;
+  border: none;
+  box-shadow: none !important;
+}
+
+// p-inputNumber {
+//   margin-left: 5%;
+//   width: 300px;
+//   border: none;
+// }
+
+ngx-intl-tel-input {
+  border: none;
+  // position: relative;
+  // left: 9px;
+  // width: 100%;
+}
+
+:host ::ng-deep .iti * {
+  border: none;
+}
+
+input:active {
+  border:none;
+}
+
+.icon-span {
+  position: absolute;
+  left: 3%;
+}
+
+.input-field {
+  margin-bottom: 35px;
+  position: relative;
+}
+
+.errMsg {
+  position: absolute;
+  top: 100%;
+  font-size: small;
+}
+
+.errMsg2 {
+  position: absolute;
+  top: 100%;
+  left: 60%;
+  font-size: small;
+}
+
+// .dropDown {
+//   width: 220px;
+//   position: absolute;
+//   top: 25%;
+//   left: 420px;
+// }
+
+// .country-list-item.selected .country-name {
+//   display: none;
+// }
+
+:host ::ng-deep .iti__country {
+  width: 250px;
+}
+
+:host ::ng-deep .iti *:focus-visible{
+  outline:none !important;
+}

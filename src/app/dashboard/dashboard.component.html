@@ -1,0 +1,356 @@
+<!-- <app-navbar></app-navbar> -->
+
+<!-- <div>
+  <img
+    class="img-fluid full-img"
+    src="https://jungleworks.com/wp-content/uploads/2020/04/OG_Jungleworks.png"
+    alt="Hyperlocal.img"
+  />
+  <div> -->
+<div>
+  <div class="block1">
+    <div id="navbar">
+      <div class="hover" (click)="dashboard()">
+        <img class="logo" src="../../../assets/images/amazon logo.webp" />
+      </div>
+      <div id="innerLocationButton" class="hover">
+        <div id="btnText">&nbsp; &nbsp; &nbsp;Delivering to Noida 110091</div>
+        <div id="innerBtnText">
+          <i class="fa-solid fa-location-dot"></i>&nbsp;<b>Update Location</b>
+        </div>
+      </div>
+      <div id="searchBar">
+        <div class="dropdown" id="navDrop">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton1"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            All
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item">action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </div>
+        <div id="searchText"><input placeholder="search Amazon.in" /></div>
+        <div class="searchIcon">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+      </div>
+      <div class="dropdown" id="country" class="hover">
+        <button
+          class="btn btn-secondary dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton1"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <img src="../../../assets/images/flag-india4271.logowik.com.webp" />EN
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+      </div>
+      <div class="dropdown" id="hello" class="hover">
+        <button
+          class="btn btn-secondary dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton1"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <small>Hello,sign in</small><br /><b>Accounts & Lists </b>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li class="dropdown-item cursor-pointer" *ngIf="adminRoutes">
+            User Count: {{ userCount }}
+          </li>
+          <li><a class="dropdown-item cursor-pointer" (click)="profile()">Your profile</a></li>
+          <li (click)="getUsers()" class="dropdown-item cursor-pointer" *ngIf="adminRoutes">
+            View Users
+          </li>
+          <li><a class="dropdown-item cursor-pointer" (click)="logout()">Log out</a></li>
+        </ul>
+      </div>
+      <div class="hover">
+        <button id="return">
+          <small>Returns</small> <br /><b>& Orders</b>
+        </button>
+      </div>
+      <div class="hover">
+        <button id="cart" class="hover">
+          <i class="fa-sharp fa-solid fa-cart-shopping"></i>Cart
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="block2">
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">...</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="secondNav">
+      <div id="firstHalf">
+        <div class="insideSecNav">
+          <button
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasWithBackdrop"
+            aria-controls="offcanvasWithBackdrop"
+          >
+            <i class="fa-solid fa-bars"></i> &nbsp; All
+          </button>
+        </div>
+        <div
+          class="offcanvas offcanvas-start"
+          tabindex="-1"
+          id="offcanvasWithBackdrop"
+          aria-labelledby="offcanvasWithBackdropLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasWithBackdropLabel">
+              Hello Sign in
+            </h5>
+            <button
+              type="button"
+              class="btn-close text-reset"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="list-group">
+              <li class="list-group-item highlight">Cras justo odio</li>
+              <li class="list-group-item">Dapibus ac facilisis in</li>
+              <li class="list-group-item">Morbi leo risus</li>
+              <li class="list-group-item">Porta ac consectetur ac</li>
+              <li class="list-group-item separator"></li>
+              <li class="list-group-item highlight">Vestibulum at eros</li>
+              <li class="list-group-item">Vestibulum at eros</li>
+              <li class="list-group-item">Vestibulum at eros</li>
+              <li class="list-group-item">Vestibulum at eros</li>
+              <li class="list-group-item">Vestibulum at eros</li>
+              <li class="list-group-item">Vestibulum at eros</li>
+              <li class="list-group-item">Vestibulum at eros</li>
+              <li class="list-group-item separator"></li>
+              <li class="list-group-item highlight">Vestibulum at eros</li>
+              <li class="list-group-item">Vestibulum at eros</li>
+              <li class="list-group-item">Vestibulum at eros</li>
+              <li class="list-group-item">Vestibulum at eros</li>
+              <li class="list-group-item">Vestibulum at eros</li>
+              <li class="list-group-item">Vestibulum at eros</li>
+            </ul>
+          </div>
+        </div>
+        <div class="insideSecNav"><button>Fresh</button></div>
+        <div class="insideSecNav"><button>Amazon miniTV</button></div>
+        <div class="insideSecNav"><button>Sell</button></div>
+        <div class="insideSecNav"><button>Best Sellers</button></div>
+        <div class="insideSecNav"><button>Mobile</button></div>
+        <div class="insideSecNav"><button>Today's Deals</button></div>
+        <div class="insideSecNav"><button>Electronics</button></div>
+        <div class="insideSecNav"><button>Customer Service</button></div>
+        <div class="insideSecNav"><button>New Releases</button></div>
+        <div class="insideSecNav">
+          <button
+            id="prime"
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton1"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Prime
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </div>
+        <div class="insideSecNav"><button>Gift Ideas</button></div>
+      </div>
+      <div id="secondHalf">
+        <button>New Launches from Electronics,Mobile and more|Shop now</button>
+      </div>
+    </div>
+
+    <div id="images">
+      <div class="cars">
+        <div
+          id="carouselExampleControls"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="../../../assets/images/123.jpg"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="../../../assets/images/amazon 2.jpg"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="../../../assets/images/mobile.jpg"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev"
+          >
+            <div class="icon left-icon">
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </div>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide="next"
+          >
+            <div class="icon right-icon">
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <div class="cardBox">
+        <div class="cards">
+          <div>
+            <h5><b>Upto 60% off | Styles for Men</b></h5>
+          </div>
+          <div class="firstImages">
+            <div>
+              <img src="../../../assets/images/cushion.jpg" /><br />cushion
+            </div>
+            <div>
+              <img src="../../../assets/images/bottle.jpg" /><br />jeans
+            </div>
+          </div>
+          <br />
+          <div class="firstImages">
+            <div>
+              <img src="../../../assets/images/tokery.webp" /><br />Bowls
+            </div>
+            <div><img src="../../../assets/images/bag.jpg" /><br />Bags</div>
+          </div>
+        </div>
+
+        <div class="cards">
+          <div>
+            <h5><b>Only at Rs.99</b></h5>
+          </div>
+          <div class="firstImages">
+            <div><img src="../../../assets/images/lamp.jpg" /><br />Lamp</div>
+            <div>
+              <img src="../../../assets/images/home.jpg" /><br />Accessories
+            </div>
+          </div>
+          <br />
+          <div class="firstImages">
+            <div>
+              <img src="../../../assets/images/cushion.jpg" /><br />cushion
+            </div>
+            <div><img src="../../../assets/images/flask.jpg" /><br />Flask</div>
+          </div>
+        </div>
+
+        <div class="cards">
+          <div>
+            <h5><b>Bluetooth Smart Watches</b></h5>
+          </div>
+          <div class="firstImages">
+            <div>
+              <img src="../../../assets/images/watche.jpg" /><br />watch
+            </div>
+            <div><img src="../../../assets/images/bag.jpg" /><br />Bags</div>
+          </div>
+          <br />
+          <div class="firstImages">
+            <div><img src="../../../assets/images/robot.jpg" /><br />robot</div>
+            <div><img src="../../../assets/images/flask.jpg" /><br />Boxes</div>
+          </div>
+        </div>
+
+        <div class="cards">
+          <div>
+            <h5><b>Home Accessories</b></h5>
+          </div>
+          <div class="firstImages">
+            <div><img src="../../../assets/images/lamp.jpg" /><br />Lamp</div>
+            <div>
+              <img src="../../../assets/images/orange.jpg" /><br />orange
+            </div>
+          </div>
+          <br />
+          <div class="firstImages">
+            <div>
+              <img src="../../../assets/images/tokery.webp" /><br />Bowls
+            </div>
+            <div>
+              <img src="../../../assets/images/home.jpg" /><br />accessories
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
